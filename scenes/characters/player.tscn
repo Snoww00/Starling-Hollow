@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_atpat"]
 radius = 4.0
-height = 10.0
+height = 8.0
 
 [sub_resource type="Animation" id="Animation_2l4js"]
 resource_name = "axe_down"
@@ -1542,7 +1542,7 @@ transitions = ["Start", "Axe", SubResource("AnimationNodeStateMachineTransition_
 graph_offset = Vector2(-87, -130)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_inhyd"]
-graph_offset = Vector2(-748.8, -56)
+graph_offset = Vector2(-454.48233, -44.7313)
 nodes/output/position = Vector2(240, 64)
 nodes/ToolStateMachine/node = SubResource("AnimationNodeStateMachine_w5sjy")
 nodes/ToolStateMachine/position = Vector2(-400, 224)
@@ -1552,8 +1552,8 @@ nodes/ToolOneShot/node = SubResource("AnimationNodeOneShot_yewv4")
 nodes/ToolOneShot/position = Vector2(-16, 16)
 node_connections = [&"output", 0, &"ToolOneShot", &"ToolOneShot", 0, &"MoveStateMachine", &"ToolOneShot", 1, &"ToolStateMachine"]
 
-[node name="Player" type="CharacterBody2D" unique_id=680609927]
-collision_layer = 2
+[node name="Player" type="CharacterBody2D" unique_id=680609927 groups=["Player"]]
+collision_layer = 6
 collision_mask = 5
 script = ExtResource("2_76oj4")
 
@@ -1561,7 +1561,7 @@ script = ExtResource("2_76oj4")
 texture = ExtResource("3_6eyoc")
 hframes = 33
 vframes = 4
-frame = 1
+frame = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91402497]
 shape = SubResource("CapsuleShape2D_atpat")

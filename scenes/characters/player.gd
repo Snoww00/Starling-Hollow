@@ -6,10 +6,27 @@ var speed = 50
 var can_move : bool = true
 @onready var move_state_machine = $Animation/AnimationTree.get("parameters/MoveStateMachine/playback")
 @onready var tool_state_machine = $Animation/AnimationTree.get("parameters/ToolStateMachine/playback")
-var current_tool : Enum.Tool = Enum.Tool.WATER
+var current_tool : Enum.Tool = Enum.Tool.SWORD
 var current_seed : Enum.Seed
+var DEFAULT_TARGET_POSITION : Vector2 = Vector2(0,1)
 
 signal tool_use(tool: Enum.Tool, pos: Vector2)
+
+func get_tool_name(tool:Enum.Tool) -> String:
+	match tool:
+		Enum.Tool.HOE:
+			return "Hoe"
+		Enum.Tool.FISH:
+			return "Fish"
+		Enum.Tool.WATER:
+			return "Water"
+		Enum.Tool.SWORD:
+			return "Sword"
+		Enum.Tool.AXE:
+			return "Axe"
+		Enum.Tool.SEED:
+			return "Seed"
+		_:return ""
 
 func _physics_process(_delta: float) -> void:
 	if can_move:
@@ -24,6 +41,8 @@ func get_basic_input():
 		var dir = Input.get_axis("tool_backward", "tool_forward")
 		#👌Changes current_tool from(0,1,2,3,4,5) and repeat instead of crashing cause went to 6 or -1 (posmod IMPORTANT for going from 0-5 and down)
 		current_tool = posmod(current_tool + int(dir), Enum.Tool.size()) as Enum.Tool
+		var tool_name = get_tool_name(current_tool)
+		$"../../HUD".show_current_tool(tool_name)
 
 	if Input.is_action_just_pressed('seed_forward'):
 		current_seed = posmod (current_seed + 1, Enum.Seed.size()) as Enum.Seed
@@ -54,7 +73,7 @@ func animate():
 
 
 func tool_use_emit():
-	tool_use.emit(current_tool, position + last_direction * 16 + Vector2(0,4))
+	tool_use.emit(current_tool, position + last_direction * 16 + DEFAULT_TARGET_POSITION)
 
 func _on_animation_tree_animation_started(_anim_name: StringName) -> void:
 	can_move = false

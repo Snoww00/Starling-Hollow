@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://c0wbejop4nuim"]
+
+[ext_resource type="Script" uid="uid://dy3sl1dlet3oo" path="res://scenes/characters/slime.gd" id="1_gh1sf"]
+[ext_resource type="PackedScene" uid="uid://c6ah1htg3q6t" path="res://scenes/VFX/flash_sprite_2d.tscn" id="1_v1yb0"]
+[ext_resource type="Shader" uid="uid://po883puyyt68" path="res://shaders/flash.tres" id="2_boxg1"]
+[ext_resource type="Texture2D" uid="uid://b466fqj7w4mne" path="res://graphics/characters/blob.png" id="4_72r5k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gh1sf"]
+resource_local_to_scene = true
+shader = ExtResource("2_boxg1")
+shader_parameter/Color = Color(1, 1, 1, 1)
+shader_parameter/Progress = 0.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hyap7"]
+radius = 5.0990195
+
+[sub_resource type="Animation" id="Animation_5r2xf"]
+resource_name = "Explode"
+length = 1.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlashSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0406, 0.2, 0.4, 0.6, 0.8, 1, 1.2333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 12, 13]
+}
+
+[sub_resource type="Animation" id="Animation_f237t"]
+resource_name = "Move"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlashSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0426, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_u04vo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FlashSprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ss67y"]
+_data = {
+&"Explode": SubResource("Animation_5r2xf"),
+&"Move": SubResource("Animation_f237t"),
+&"RESET": SubResource("Animation_u04vo")
+}
+
+[node name="Slime" type="CharacterBody2D" unique_id=70944941 groups=["Objects"]]
+collision_layer = 4
+script = ExtResource("1_gh1sf")
+
+[node name="FlashSprite2D" parent="." unique_id=1310401204 instance=ExtResource("1_v1yb0")]
+material = SubResource("ShaderMaterial_gh1sf")
+texture = ExtResource("4_72r5k")
+hframes = 14
+vframes = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1087270868]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_hyap7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1913671471]
+libraries/ = SubResource("AnimationLibrary_ss67y")
+autoplay = &"Move"
+
+[node name="Blob" type="Sprite2D" parent="." unique_id=1573414825]
+visible = false
+position = Vector2(10, -2)
+texture = ExtResource("4_72r5k")
