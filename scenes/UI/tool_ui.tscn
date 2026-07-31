@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://b0ug05qe8lus7"]
+
+[ext_resource type="Script" uid="uid://bi3eeqi6ufcy0" path="res://scenes/UI/tool_ui.gd" id="1_5w4ni"]
+[ext_resource type="Texture2D" uid="uid://djnf3s4rpgxhp" path="res://graphics/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="2_y0ilp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hta32"]
+atlas = ExtResource("2_y0ilp")
+region = Rect2(180.028, 147.995, 24.077, 25.032)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oxg2u"]
+texture = SubResource("AtlasTexture_hta32")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
+draw_center = false
+
+[node name="ToolUI" type="Control" unique_id=1006148572]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_5w4ni")
+
+[node name="Tool container" type="HBoxContainer" parent="." unique_id=1247366642]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 720.0
+offset_top = -90.0
+offset_right = -720.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="SelectionFrame" type="PanelContainer" parent="." unique_id=243649389]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+offset_right = 32.0
+offset_bottom = 32.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_oxg2u")

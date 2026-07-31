@@ -6,7 +6,8 @@ var speed = 50
 var can_move : bool = true
 @onready var move_state_machine = $Animation/AnimationTree.get("parameters/MoveStateMachine/playback")
 @onready var tool_state_machine = $Animation/AnimationTree.get("parameters/ToolStateMachine/playback")
-var current_tool : Enum.Tool = Enum.Tool.SWORD
+@onready var tool_ui: Control = $"../../CanvasLayer/ToolUI"
+var current_tool : Enum.Tool = Enum.Tool.HOE
 var current_seed : Enum.Seed
 var DEFAULT_TARGET_POSITION : Vector2 = Vector2(0,1)
 
@@ -41,8 +42,7 @@ func get_basic_input():
 		var dir = Input.get_axis("tool_backward", "tool_forward")
 		#👌Changes current_tool from(0,1,2,3,4,5) and repeat instead of crashing cause went to 6 or -1 (posmod IMPORTANT for going from 0-5 and down)
 		current_tool = posmod(current_tool + int(dir), Enum.Tool.size()) as Enum.Tool
-		var tool_name = get_tool_name(current_tool)
-		$"../../HUD".show_current_tool(tool_name)
+		tool_ui.move_selector_to_slot(current_tool)
 
 	if Input.is_action_just_pressed('seed_forward'):
 		current_seed = posmod (current_seed + 1, Enum.Seed.size()) as Enum.Seed

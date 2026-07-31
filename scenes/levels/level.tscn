@@ -7,9 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://b0mnopqlx5dix" path="res://scenes/characters/player.tscn" id="2_b2cq8"]
 [ext_resource type="Texture2D" uid="uid://vrdy2gp08qay" path="res://graphics/tilesets/soil_water.png" id="5_d4w6o"]
 [ext_resource type="Texture2D" uid="uid://cwbhys0nypuq" path="res://graphics/tilesets/roof.png" id="6_ouxo3"]
-[ext_resource type="PackedScene" uid="uid://bib2w83q6tk6" path="res://scenes/hud.tscn" id="7_mbbpy"]
 [ext_resource type="PackedScene" uid="uid://b2heydsd8i21a" path="res://scenes/Objects/Tree.tscn" id="8_icy5c"]
-[ext_resource type="PackedScene" uid="uid://c0wbejop4nuim" path="res://scenes/characters/slime.tscn" id="10_rmjfq"]
+[ext_resource type="PackedScene" uid="uid://b0ug05qe8lus7" path="res://scenes/UI/tool_ui.tscn" id="9_icy5c"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_urvlt"]
 texture = ExtResource("1_xb4v1")
@@ -881,10 +880,11 @@ position = Vector2(186, 342)
 [node name="Tree" parent="Objects" unique_id=1858123554 instance=ExtResource("8_icy5c")]
 position = Vector2(68, 334)
 
-[node name="Slime" parent="Objects" unique_id=70944941 instance=ExtResource("10_rmjfq")]
-position = Vector2(140, 286)
-collision_mask = 0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1455069085]
 
-[node name="HUD" parent="." unique_id=2013553459 instance=ExtResource("7_mbbpy")]
+[node name="ToolUI" parent="CanvasLayer" unique_id=1006148572 instance=ExtResource("9_icy5c")]
+anchors_preset = 12
+anchor_top = 1.0
+grow_vertical = 0
 
 [connection signal="tool_use" from="Objects/Player" to="." method="_on_player_tool_use"]

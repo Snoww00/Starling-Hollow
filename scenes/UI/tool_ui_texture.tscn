@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://by6g428gdsph3"]
+
+[ext_resource type="Script" uid="uid://dcqrd3c37r4sv" path="res://scenes/UI/tool_ui_texture.gd" id="1_5godu"]
+[ext_resource type="Texture2D" uid="uid://btjy01hwoemkf" path="res://graphics/icons/axe.png" id="1_x4u7f"]
+[ext_resource type="Texture2D" uid="uid://djnf3s4rpgxhp" path="res://graphics/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="2_5j2ri"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxs1b"]
+atlas = ExtResource("2_5j2ri")
+region = Rect2(613.9821, 4.998211, 20.01117, 21.015669)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y0ilp"]
+texture = SubResource("AtlasTexture_lxs1b")
+
+[node name="ToolUITexture" type="Control" unique_id=733989642]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 32.0
+offset_bottom = 32.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_5godu")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=454498619]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_y0ilp")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=611676332]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -14.0
+offset_top = -14.0
+offset_right = 14.0
+offset_bottom = 14.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_x4u7f")
+expand_mode = 2
