@@ -42,11 +42,11 @@ func get_basic_input():
 		var dir = Input.get_axis("tool_backward", "tool_forward")
 		#👌Changes current_tool from(0,1,2,3,4,5) and repeat instead of crashing cause went to 6 or -1 (posmod IMPORTANT for going from 0-5 and down)
 		current_tool = posmod(current_tool + int(dir), Enum.Tool.size()) as Enum.Tool
-		tool_ui.move_selector_to_slot(current_tool)
+		tool_ui.move_Tool_selector(current_tool)
 
 	if Input.is_action_just_pressed('seed_forward'):
 		current_seed = posmod (current_seed + 1, Enum.Seed.size()) as Enum.Seed
-		print(current_seed)
+		tool_ui.move_Seed_selector(current_seed)
 
 	if Input.is_action_just_pressed("action"):
 		tool_state_machine.travel(Data.TOOL_STATE_ANIMATIONS[current_tool])
