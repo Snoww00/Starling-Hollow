@@ -6,8 +6,8 @@ var speed = 50
 var can_move : bool = true
 @onready var move_state_machine = $Animation/AnimationTree.get("parameters/MoveStateMachine/playback")
 @onready var tool_state_machine = $Animation/AnimationTree.get("parameters/ToolStateMachine/playback")
-@onready var tool_ui: Control = $"../../CanvasLayer/ToolUI"
-var current_tool : Enum.Tool = Enum.Tool.HOE
+@onready var tool_ui: Control = $"../../User Interface/ToolUI"
+var current_tool : Enum.Tool 
 var current_seed : Enum.Seed
 var DEFAULT_TARGET_POSITION : Vector2 = Vector2(0,1)
 

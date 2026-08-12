@@ -19,7 +19,7 @@ func hit(tool:Enum.Tool):
 		health -= 1
 		
 func _ready() -> void:
-	create_apples(3)
+	create_apples(randi_range(0,3))
 
 func create_apples(num: int):
 	var apple_markers = $AppleSpawnPositions.get_children().duplicate(true)
@@ -35,4 +35,11 @@ func get_apple():
 		$Apples.get_children().pick_random().queue_free()
 		print('get_apple')
 		
+	
+func reset():
+	if health > 0:
+		for apple in $Apples.get_children():
+			apple.queue_free()
+		create_apples(randi_range(0,3))
+		health = 4
 	
