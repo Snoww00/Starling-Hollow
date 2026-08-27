@@ -11,8 +11,8 @@ func _physics_process(_delta: float) -> void:
 	var grid_coord: Vector2i = Vector2i(int(pos.x / Data.TILE_SIZE),int(pos.y / Data.TILE_SIZE))
 	grid_coord.x += -1 if pos.x < 0 else 0
 	grid_coord.y += -1 if pos.y < 0 else 0 
-	$Layers/DebugLayer.clear()
-	$Layers/DebugLayer.set_cell(grid_coord, 0,Vector2i(1,3))
+	#$ToolTarget. (grid_coord, 0,Vector2i(1,3))
+	#$ToolTarget.
 
 func _on_player_tool_use(tool: Enum.Tool, pos: Vector2) -> void:
 	var grid_coord: Vector2i = Vector2i(int(pos.x / Data.TILE_SIZE),int(pos.y / Data.TILE_SIZE))
