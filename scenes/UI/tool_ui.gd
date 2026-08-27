@@ -1,6 +1,7 @@
 extends Control
 
 const TOOL_TEXTURES = {
+	Enum.Tool.HAND: preload("res://graphics/icons/hand.png"),
 	Enum.Tool.AXE: preload("res://graphics/icons/axe.png"),
 	Enum.Tool.HOE: preload("res://graphics/icons/hoe.png"),
 	Enum.Tool.WATER: preload("res://graphics/icons/water.png"),

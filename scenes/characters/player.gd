@@ -10,6 +10,7 @@ var can_move : bool = true
 var current_tool : Enum.Tool 
 var current_seed : Enum.Seed
 var DEFAULT_TARGET_POSITION : Vector2 = Vector2(0,1)
+var TILE_SIZE = 16;
 
 signal tool_use(tool: Enum.Tool, pos: Vector2)
 
@@ -36,6 +37,12 @@ func _physics_process(_delta: float) -> void:
 		animate()
 	if direction:
 		last_direction = direction
+	var tool = get_tool_name(current_tool)
+	if tool == "":
+		$ToolTarget.visible = false;
+	else:
+		$ToolTarget.visible = true;
+		$ToolTarget.position = last_direction * TILE_SIZE + DEFAULT_TARGET_POSITION;
 
 func get_basic_input():
 	if Input.is_action_just_pressed('tool_forward') or Input.is_action_just_pressed('tool_backward'):
@@ -73,7 +80,7 @@ func animate():
 
 
 func tool_use_emit():
-	tool_use.emit(current_tool, position + last_direction * 16 + DEFAULT_TARGET_POSITION)
+	tool_use.emit(current_tool, position + last_direction * TILE_SIZE + DEFAULT_TARGET_POSITION)
 
 func _on_animation_tree_animation_started(_anim_name: StringName) -> void:
 	can_move = false
