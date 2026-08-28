@@ -53,9 +53,8 @@ func get_basic_input():
 		tool_ui.move_Seed_selector(current_seed)
 
 	if Input.is_action_just_pressed("action"):
-		if current_tool != Enum.Tool.HAND:
-			tool_state_machine.travel(Data.TOOL_STATE_ANIMATIONS[current_tool])
-			$Animation/AnimationTree.set("parameters/ToolOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+		tool_state_machine.travel(Data.TOOL_STATE_ANIMATIONS[current_tool])
+		$Animation/AnimationTree.set("parameters/ToolOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
 		
 
 func move():
