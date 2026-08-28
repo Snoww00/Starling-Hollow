@@ -6,6 +6,7 @@ var used_cells :Array[Vector2i]
 @onready var day_transition_material = $"CanvasLayer/Day TransitionLayer".material
 @export var daytime_color : Gradient
 
+
 func _ready():
 	player.tool_target.connect(_on_player_tool_target)
 	
@@ -38,13 +39,22 @@ func _on_player_tool_use(tool: Enum.Tool, pos: Vector2) -> void:
 				print('fishing')
 		Enum.Tool.SEED:
 			if has_soil and grid_coord not in used_cells:
+				var plant_res = PlantResource.new()
+				plant_res.setup($Objects/Player.current_seed)
 				var plant = plant_scene.instantiate()
-				plant.setup(grid_coord, $Objects)
+				plant.setup(grid_coord, $Objects,plant_res)
 				used_cells.append(grid_coord)
 		Enum.Tool.AXE, Enum.Tool.SWORD:
 			for object in get_tree().get_nodes_in_group('Objects'):
 				if object.position.distance_to(pos) < 20:
 					object.hit(tool)
+			if grid_coord in used_cells:
+				for child in $Objects.get_children():
+					if "coord" in child and child.coord == grid_coord:
+						if child.is_ready_to_harvest():
+							used_cells.erase(grid_coord)
+							child.queue_free()
+							break
 			
 func _process(_delta: float) -> void:
 	var daytime_point = 1 - ($Timers/DayTimer.time_left / $Timers/DayTimer.wait_time)
@@ -61,6 +71,11 @@ func day_restart():
 	tween.tween_property(day_transition_material,"shader_parameter/progress", 0 , 1.0)
 
 func level_reset():
+	
+	for plant in get_tree().get_nodes_in_group('Plants'):
+		plant.grow(plant.coord in $"Layers/Soil Water Layer".get_used_cells())
+	#$"Layers/Soil Water Layer".clear()
+	
 	$Timers/DayTimer.start()
 	for object in get_tree().get_nodes_in_group('Objects'):
 		if 'reset' in object:

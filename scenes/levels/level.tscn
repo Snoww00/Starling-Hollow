@@ -882,6 +882,8 @@ random = false
 z_index = -1
 position = Vector2(171, 258)
 collision_mask = 0
+size = 2
+style = 1
 
 [node name="SimpleObject3" parent="Objects" unique_id=391399757 instance=ExtResource("7_rmjfq")]
 position = Vector2(108, 350)

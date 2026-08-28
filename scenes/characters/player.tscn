@@ -315,6 +315,74 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_atpat"]
+resource_name = "hand down"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="Animation_kqtwu"]
+resource_name = "hand_left"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [34, 35]
+}
+
+[sub_resource type="Animation" id="Animation_hdner"]
+resource_name = "hand_right"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [67, 68]
+}
+
+[sub_resource type="Animation" id="Animation_m38kj"]
+resource_name = "hand_up"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [99, 100]
+}
+
 [sub_resource type="Animation" id="Animation_rpnd8"]
 resource_name = "hoe_down"
 length = 0.8
@@ -945,6 +1013,10 @@ _data = {
 &"fish_left": SubResource("Animation_a2luo"),
 &"fish_right": SubResource("Animation_tswxa"),
 &"fish_up": SubResource("Animation_eir2k"),
+&"hand down": SubResource("Animation_atpat"),
+&"hand_left": SubResource("Animation_kqtwu"),
+&"hand_right": SubResource("Animation_hdner"),
+&"hand_up": SubResource("Animation_m38kj"),
 &"hoe_down": SubResource("Animation_rpnd8"),
 &"hoe_left": SubResource("Animation_d6tgn"),
 &"hoe_right": SubResource("Animation_aqa0x"),
@@ -1096,7 +1168,7 @@ states/Idle/position = Vector2(305.2, 99.68001)
 states/Walk/node = SubResource("AnimationNodeBlendSpace2D_kqtwu")
 states/Walk/position = Vector2(305.04, 28.832)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_a2luo"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_yewv4"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_76oj4")]
-graph_offset = Vector2(-260, -440)
+graph_offset = Vector2(-265.3893, -248.69565)
 
 [sub_resource type="AnimationNodeOneShot" id="AnimationNodeOneShot_yewv4"]
 
@@ -1211,6 +1283,56 @@ blend_point_7/name = &"7"
 blend_point_8/node = SubResource("AnimationNodeAnimation_6aj6e")
 blend_point_8/pos = Vector2(1, -1)
 blend_point_8/name = &"8"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3wg1y"]
+animation = &"hand down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_a2luo"]
+animation = &"hand_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_eir2k"]
+animation = &"hand_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_inhyd"]
+animation = &"hand_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wqk1x"]
+animation = &"hand_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_dm10o"]
+animation = &"hand_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_o6auj"]
+animation = &"hand_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_j8g38"]
+animation = &"hand_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_tswxa"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_3wg1y")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_0/name = &"hand down"
+blend_point_1/node = SubResource("AnimationNodeAnimation_a2luo")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_1/name = &"hand_up"
+blend_point_2/node = SubResource("AnimationNodeAnimation_eir2k")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_2/name = &"hand_left"
+blend_point_3/node = SubResource("AnimationNodeAnimation_inhyd")
+blend_point_3/pos = Vector2(-1, 1)
+blend_point_3/name = &"hand_left 2"
+blend_point_4/node = SubResource("AnimationNodeAnimation_wqk1x")
+blend_point_4/pos = Vector2(-1, -1)
+blend_point_4/name = &"hand_left 3"
+blend_point_5/node = SubResource("AnimationNodeAnimation_dm10o")
+blend_point_5/pos = Vector2(1, 0)
+blend_point_5/name = &"hand_right"
+blend_point_6/node = SubResource("AnimationNodeAnimation_o6auj")
+blend_point_6/pos = Vector2(1, 1)
+blend_point_6/name = &"hand_right 2"
+blend_point_7/node = SubResource("AnimationNodeAnimation_j8g38")
+blend_point_7/pos = Vector2(1, -1)
+blend_point_7/name = &"hand_right 3"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n7k00"]
 animation = &"hoe_left"
@@ -1436,9 +1558,6 @@ blend_point_8/node = SubResource("AnimationNodeAnimation_bl5np")
 blend_point_8/pos = Vector2(1, -1)
 blend_point_8/name = &"8"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6aj6e"]
-advance_mode = 2
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_n7k00"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lnpl6"]
@@ -1523,26 +1642,59 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dyp2m"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_atpat"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kqtwu"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6eyoc"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_eojnx"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qgnko"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7vyk4"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2l4js"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jk2m4"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xhtjm"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k4v7y"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xrqxk"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g66nw"]
+switch_mode = 2
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_rpnd8"]
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_w5sjy"]
 states/Axe/node = SubResource("AnimationNodeBlendSpace2D_rfou0")
 states/Axe/position = Vector2(225.056, 87.96319)
-states/End/position = Vector2(836, 272.16003)
+states/End/position = Vector2(1302.4, -77.43996)
 states/Fish/node = SubResource("AnimationNodeBlendSpace2D_vkt2s")
-states/Fish/position = Vector2(387.99997, 261.10562)
+states/Fish/position = Vector2(890.68896, 54.705593)
+states/Hand/node = SubResource("AnimationNodeBlendSpace2D_tswxa")
+states/Hand/position = Vector2(639.9999, 185.94547)
 states/Hoe/node = SubResource("AnimationNodeBlendSpace2D_6ux5t")
-states/Hoe/position = Vector2(224.31999, -275.8)
+states/Hoe/position = Vector2(225.21855, -122.999985)
 states/Seed/node = SubResource("AnimationNodeBlendSpace2D_lvr6b")
-states/Seed/position = Vector2(1064.4417, -276.13278)
-states/Start/position = Vector2(36, 88.062706)
+states/Seed/position = Vector2(670.0416, -304.13278)
+states/Start/position = Vector2(618.39996, 297.5831)
 states/Sword/node = SubResource("AnimationNodeBlendSpace2D_nktl3")
-states/Sword/position = Vector2(643.2, -377.2)
+states/Sword/position = Vector2(356, -311.6)
 states/Water/node = SubResource("AnimationNodeBlendSpace2D_yyjep")
-states/Water/position = Vector2(1064.192, 87.51519)
-transitions = ["Start", "Axe", SubResource("AnimationNodeStateMachineTransition_6aj6e"), "Axe", "Hoe", SubResource("AnimationNodeStateMachineTransition_n7k00"), "Hoe", "Axe", SubResource("AnimationNodeStateMachineTransition_lnpl6"), "Hoe", "Sword", SubResource("AnimationNodeStateMachineTransition_5bn3a"), "Sword", "Hoe", SubResource("AnimationNodeStateMachineTransition_tnye5"), "Axe", "Fish", SubResource("AnimationNodeStateMachineTransition_as8yd"), "Fish", "Axe", SubResource("AnimationNodeStateMachineTransition_qmarm"), "Sword", "Seed", SubResource("AnimationNodeStateMachineTransition_w5bca"), "Seed", "Sword", SubResource("AnimationNodeStateMachineTransition_j057w"), "Sword", "Water", SubResource("AnimationNodeStateMachineTransition_18mi3"), "Water", "Sword", SubResource("AnimationNodeStateMachineTransition_3uc7m"), "Sword", "Fish", SubResource("AnimationNodeStateMachineTransition_pue7u"), "Fish", "Sword", SubResource("AnimationNodeStateMachineTransition_7k8pb"), "Sword", "Axe", SubResource("AnimationNodeStateMachineTransition_5njio"), "Axe", "Sword", SubResource("AnimationNodeStateMachineTransition_aphfe"), "Seed", "Water", SubResource("AnimationNodeStateMachineTransition_dvq58"), "Water", "Seed", SubResource("AnimationNodeStateMachineTransition_qgqs5"), "Seed", "Fish", SubResource("AnimationNodeStateMachineTransition_e1rhj"), "Fish", "Seed", SubResource("AnimationNodeStateMachineTransition_qdswu"), "Seed", "Axe", SubResource("AnimationNodeStateMachineTransition_itbg4"), "Axe", "Seed", SubResource("AnimationNodeStateMachineTransition_ojpyd"), "Seed", "Hoe", SubResource("AnimationNodeStateMachineTransition_16acs"), "Hoe", "Seed", SubResource("AnimationNodeStateMachineTransition_djobu"), "Hoe", "Water", SubResource("AnimationNodeStateMachineTransition_s7nkp"), "Water", "Hoe", SubResource("AnimationNodeStateMachineTransition_csfhi"), "Hoe", "Fish", SubResource("AnimationNodeStateMachineTransition_tigr0"), "Fish", "Hoe", SubResource("AnimationNodeStateMachineTransition_5oy2u"), "Axe", "Water", SubResource("AnimationNodeStateMachineTransition_g65n5"), "Water", "Axe", SubResource("AnimationNodeStateMachineTransition_25jl8"), "Fish", "Water", SubResource("AnimationNodeStateMachineTransition_xnwxl"), "Water", "Fish", SubResource("AnimationNodeStateMachineTransition_m1gc8"), "Fish", "End", SubResource("AnimationNodeStateMachineTransition_8dtuh"), "Axe", "End", SubResource("AnimationNodeStateMachineTransition_ktr60"), "Water", "End", SubResource("AnimationNodeStateMachineTransition_jmtvv"), "Seed", "End", SubResource("AnimationNodeStateMachineTransition_jpw38"), "Sword", "End", SubResource("AnimationNodeStateMachineTransition_kvdys"), "Hoe", "End", SubResource("AnimationNodeStateMachineTransition_bl5np")]
-graph_offset = Vector2(-87, -130)
+states/Water/position = Vector2(890.7229, -197.17369)
+transitions = ["Axe", "Hoe", SubResource("AnimationNodeStateMachineTransition_n7k00"), "Hoe", "Axe", SubResource("AnimationNodeStateMachineTransition_lnpl6"), "Hoe", "Sword", SubResource("AnimationNodeStateMachineTransition_5bn3a"), "Sword", "Hoe", SubResource("AnimationNodeStateMachineTransition_tnye5"), "Axe", "Fish", SubResource("AnimationNodeStateMachineTransition_as8yd"), "Fish", "Axe", SubResource("AnimationNodeStateMachineTransition_qmarm"), "Sword", "Seed", SubResource("AnimationNodeStateMachineTransition_w5bca"), "Seed", "Sword", SubResource("AnimationNodeStateMachineTransition_j057w"), "Sword", "Water", SubResource("AnimationNodeStateMachineTransition_18mi3"), "Water", "Sword", SubResource("AnimationNodeStateMachineTransition_3uc7m"), "Sword", "Fish", SubResource("AnimationNodeStateMachineTransition_pue7u"), "Fish", "Sword", SubResource("AnimationNodeStateMachineTransition_7k8pb"), "Sword", "Axe", SubResource("AnimationNodeStateMachineTransition_5njio"), "Axe", "Sword", SubResource("AnimationNodeStateMachineTransition_aphfe"), "Seed", "Water", SubResource("AnimationNodeStateMachineTransition_dvq58"), "Water", "Seed", SubResource("AnimationNodeStateMachineTransition_qgqs5"), "Seed", "Fish", SubResource("AnimationNodeStateMachineTransition_e1rhj"), "Fish", "Seed", SubResource("AnimationNodeStateMachineTransition_qdswu"), "Seed", "Axe", SubResource("AnimationNodeStateMachineTransition_itbg4"), "Axe", "Seed", SubResource("AnimationNodeStateMachineTransition_ojpyd"), "Seed", "Hoe", SubResource("AnimationNodeStateMachineTransition_16acs"), "Hoe", "Seed", SubResource("AnimationNodeStateMachineTransition_djobu"), "Hoe", "Water", SubResource("AnimationNodeStateMachineTransition_s7nkp"), "Water", "Hoe", SubResource("AnimationNodeStateMachineTransition_csfhi"), "Hoe", "Fish", SubResource("AnimationNodeStateMachineTransition_tigr0"), "Fish", "Hoe", SubResource("AnimationNodeStateMachineTransition_5oy2u"), "Axe", "Water", SubResource("AnimationNodeStateMachineTransition_g65n5"), "Water", "Axe", SubResource("AnimationNodeStateMachineTransition_25jl8"), "Fish", "Water", SubResource("AnimationNodeStateMachineTransition_xnwxl"), "Water", "Fish", SubResource("AnimationNodeStateMachineTransition_m1gc8"), "Fish", "End", SubResource("AnimationNodeStateMachineTransition_8dtuh"), "Axe", "End", SubResource("AnimationNodeStateMachineTransition_ktr60"), "Water", "End", SubResource("AnimationNodeStateMachineTransition_jmtvv"), "Seed", "End", SubResource("AnimationNodeStateMachineTransition_jpw38"), "Sword", "End", SubResource("AnimationNodeStateMachineTransition_kvdys"), "Hoe", "End", SubResource("AnimationNodeStateMachineTransition_bl5np"), "Hand", "Hoe", SubResource("AnimationNodeStateMachineTransition_dyp2m"), "Hoe", "Hand", SubResource("AnimationNodeStateMachineTransition_atpat"), "Axe", "Hand", SubResource("AnimationNodeStateMachineTransition_kqtwu"), "Hand", "Axe", SubResource("AnimationNodeStateMachineTransition_6eyoc"), "Fish", "Hand", SubResource("AnimationNodeStateMachineTransition_eojnx"), "Hand", "Fish", SubResource("AnimationNodeStateMachineTransition_qgnko"), "Hand", "Water", SubResource("AnimationNodeStateMachineTransition_7vyk4"), "Water", "Hand", SubResource("AnimationNodeStateMachineTransition_2l4js"), "Seed", "Hand", SubResource("AnimationNodeStateMachineTransition_jk2m4"), "Hand", "Seed", SubResource("AnimationNodeStateMachineTransition_xhtjm"), "Sword", "Hand", SubResource("AnimationNodeStateMachineTransition_k4v7y"), "Hand", "Sword", SubResource("AnimationNodeStateMachineTransition_xrqxk"), "Hand", "End", SubResource("AnimationNodeStateMachineTransition_g66nw"), "Start", "Hand", SubResource("AnimationNodeStateMachineTransition_rpnd8")]
+graph_offset = Vector2(57.23636, -403.05457)
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_inhyd"]
-graph_offset = Vector2(-454.48233, -44.7313)
+graph_offset = Vector2(-631.5321, -239.2)
 nodes/output/position = Vector2(240, 64)
 nodes/ToolStateMachine/node = SubResource("AnimationNodeStateMachine_w5sjy")
 nodes/ToolStateMachine/position = Vector2(-400, 224)
@@ -1561,7 +1713,7 @@ script = ExtResource("2_76oj4")
 texture = ExtResource("3_6eyoc")
 hframes = 33
 vframes = 4
-frame = 1
+frame = 35
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91402497]
 shape = SubResource("CapsuleShape2D_atpat")
@@ -1579,6 +1731,7 @@ tree_root = SubResource("AnimationNodeBlendTree_inhyd")
 anim_player = NodePath("../AnimationPlayer")
 parameters/ToolStateMachine/Axe/blend_position = Vector2(0, 0)
 parameters/ToolStateMachine/Fish/blend_position = Vector2(0, 0)
+parameters/ToolStateMachine/Hand/blend_position = Vector2(0, 0)
 parameters/ToolStateMachine/Hoe/blend_position = Vector2(0, 0)
 parameters/ToolStateMachine/Seed/blend_position = Vector2(0, 0)
 parameters/ToolStateMachine/Sword/blend_position = Vector2(0, 0)

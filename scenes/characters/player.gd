@@ -7,7 +7,8 @@ var can_move : bool = true
 @onready var move_state_machine = $Animation/AnimationTree.get("parameters/MoveStateMachine/playback")
 @onready var tool_state_machine = $Animation/AnimationTree.get("parameters/ToolStateMachine/playback")
 @onready var tool_ui: Control = $"../../User Interface/ToolUI"
-@onready var player = $Objects/Player
+#@onready var player = $Objects/Player
+
 var current_tool : Enum.Tool 
 var current_seed : Enum.Seed
 var DEFAULT_TARGET_POSITION : Vector2 = Vector2(0,1)
@@ -30,6 +31,8 @@ func get_tool_name(tool:Enum.Tool) -> String:
 			return "Axe"
 		Enum.Tool.SEED:
 			return "Seed"
+		Enum.Tool.HAND:
+			return "Hand"
 		_:return ""
 
 func _physics_process(_delta: float) -> void:
@@ -53,9 +56,10 @@ func get_basic_input():
 		tool_ui.move_Seed_selector(current_seed)
 
 	if Input.is_action_just_pressed("action"):
-		tool_state_machine.travel(Data.TOOL_STATE_ANIMATIONS[current_tool])
-		$Animation/AnimationTree.set("parameters/ToolOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
-		
+		if current_tool != Enum.Tool.HAND:
+			tool_state_machine.travel(Data.TOOL_STATE_ANIMATIONS[current_tool])
+			$Animation/AnimationTree.set("parameters/ToolOneShot/request", AnimationNodeOneShot.ONE_SHOT_REQUEST_FIRE)
+	
 
 func move():
 	direction = Input.get_vector("left", "right", "up", "down")
@@ -83,6 +87,6 @@ func tool_use_emit():
 
 func _on_animation_tree_animation_started(_anim_name: StringName) -> void:
 	can_move = false
-
+	
 func _on_animation_tree_animation_finished(_anim_name: StringName) -> void:
 	can_move = true
