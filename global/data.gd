@@ -87,6 +87,7 @@ const STYLE_UPGRADES = {
 		'icon': preload("res://graphics/icons/straw.png"),
 		'color': Color.BURLYWOOD}}
 const TOOL_STATE_ANIMATIONS = {
+	Enum.Tool.HAND: 'Hand',
 	Enum.Tool.HOE: 'Hoe',
 	Enum.Tool.AXE: 'Axe',
 	Enum.Tool.WATER: 'Water',
