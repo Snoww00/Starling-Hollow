@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bhd33vu4qpbph" path="res://graphics/tilesets/water.png" id="1_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://b0mnopqlx5dix" path="res://scenes/characters/player.tscn" id="2_b2cq8"]
 [ext_resource type="Texture2D" uid="uid://vrdy2gp08qay" path="res://graphics/tilesets/soil_water.png" id="5_d4w6o"]
-[ext_resource type="Texture2D" uid="uid://cwbhys0nypuq" path="res://graphics/tilesets/roof.png" id="6_ouxo3"]
 [ext_resource type="PackedScene" uid="uid://b2lpebbx4vrgl" path="res://scenes/Objects/simple_object.tscn" id="7_rmjfq"]
+[ext_resource type="Texture2D" uid="uid://djnf3s4rpgxhp" path="res://graphics/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="7_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://b2heydsd8i21a" path="res://scenes/Objects/Tree.tscn" id="8_icy5c"]
 [ext_resource type="PackedScene" uid="uid://b0ug05qe8lus7" path="res://scenes/UI/tool_ui.tscn" id="9_icy5c"]
 [ext_resource type="Shader" uid="uid://cykq6yr0yah1p" path="res://shaders/circle_transition.gdshader" id="11_7pb6i"]
@@ -827,29 +827,14 @@ texture = ExtResource("5_d4w6o")
 [sub_resource type="TileSet" id="TileSet_irt5y"]
 sources/0 = SubResource("TileSetAtlasSource_mbbpy")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_icy5c"]
-texture = ExtResource("6_ouxo3")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7pb6i"]
+texture = ExtResource("7_xfk5q")
+margins = Vector2i(16, 16)
+texture_region_size = Vector2i(32, 32)
+4:4/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ahhtf"]
-sources/0 = SubResource("TileSetAtlasSource_icy5c")
+sources/8 = SubResource("TileSetAtlasSource_7pb6i")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rmjfq"]
 shader = ExtResource("11_7pb6i")
@@ -881,8 +866,7 @@ modulate = Color(1, 1, 1, 0.78431374)
 z_index = -2
 tile_set = SubResource("TileSet_irt5y")
 
-[node name="DebugLayer" type="TileMapLayer" parent="Layers" unique_id=1879620856]
-visible = false
+[node name="FeedbackLayer" type="TileMapLayer" parent="Layers" unique_id=1879620856]
 z_index = -2
 position = Vector2(-3, 0)
 tile_set = SubResource("TileSet_ahhtf")
@@ -891,6 +875,7 @@ tile_set = SubResource("TileSet_ahhtf")
 y_sort_enabled = true
 
 [node name="SimpleObject" parent="Objects" unique_id=456384368 instance=ExtResource("7_rmjfq")]
+z_index = -1
 position = Vector2(97, 281)
 collision_mask = 0
 random = false
@@ -898,7 +883,7 @@ random = false
 [node name="SimpleObject2" parent="Objects" unique_id=398614094 instance=ExtResource("7_rmjfq")]
 position = Vector2(171, 258)
 collision_mask = 0
-size = 3
+size = 2
 style = 1
 
 [node name="SimpleObject3" parent="Objects" unique_id=391399757 instance=ExtResource("7_rmjfq")]
@@ -908,14 +893,16 @@ size = 2
 random = false
 
 [node name="SimpleObject4" parent="Objects" unique_id=1309494899 instance=ExtResource("7_rmjfq")]
+z_index = -1
 position = Vector2(152, 299)
 collision_mask = 0
-style = 1
 
 [node name="SimpleObject5" parent="Objects" unique_id=488933310 instance=ExtResource("7_rmjfq")]
+z_index = -1
 position = Vector2(213, 310)
 collision_mask = 0
-size = 2
+size = 1
+style = 1
 
 [node name="Player" parent="Objects" unique_id=2081127626 instance=ExtResource("2_b2cq8")]
 position = Vector2(183, 336)

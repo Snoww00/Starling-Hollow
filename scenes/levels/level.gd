@@ -6,13 +6,19 @@ var used_cells :Array[Vector2i]
 @onready var day_transition_material = $"CanvasLayer/Day TransitionLayer".material
 @export var daytime_color : Gradient
 
-func _physics_process(_delta: float) -> void:
-	var pos = player.position + player.last_direction * 16 + Vector2(0,4)
-	var grid_coord: Vector2i = Vector2i(int(pos.x / Data.TILE_SIZE),int(pos.y / Data.TILE_SIZE))
+func _ready():
+	player.tool_target.connect(_on_player_tool_target)
+	
+func _on_player_tool_target(tool: Enum.Tool, pos: Vector2) -> void:
+	var player_pos = player.position + player.last_direction * 16 + Vector2(0,4)
+	var grid_coord: Vector2i = Vector2i(int(player_pos.x / Data.TILE_SIZE),int(player_pos.y / Data.TILE_SIZE))
 	grid_coord.x += -1 if pos.x < 0 else 0
 	grid_coord.y += -1 if pos.y < 0 else 0 
-	#$ToolTarget. (grid_coord, 0,Vector2i(1,3))
-	#$ToolTarget.
+	if tool == Enum.Tool.HAND || tool == Enum.Tool.SWORD:
+		$Layers/FeedbackLayer.clear()
+	else:
+		$Layers/FeedbackLayer.clear()
+		$Layers/FeedbackLayer.set_cell(grid_coord, 8 ,Vector2i(4,4))
 
 func _on_player_tool_use(tool: Enum.Tool, pos: Vector2) -> void:
 	var grid_coord: Vector2i = Vector2i(int(pos.x / Data.TILE_SIZE),int(pos.y / Data.TILE_SIZE))

@@ -7,12 +7,14 @@ var can_move : bool = true
 @onready var move_state_machine = $Animation/AnimationTree.get("parameters/MoveStateMachine/playback")
 @onready var tool_state_machine = $Animation/AnimationTree.get("parameters/ToolStateMachine/playback")
 @onready var tool_ui: Control = $"../../User Interface/ToolUI"
+@onready var player = $Objects/Player
 var current_tool : Enum.Tool 
 var current_seed : Enum.Seed
 var DEFAULT_TARGET_POSITION : Vector2 = Vector2(0,1)
 var TILE_SIZE = 16;
 
 signal tool_use(tool: Enum.Tool, pos: Vector2)
+signal tool_target(tool: Enum.Tool, pos: Vector2)
 
 func get_tool_name(tool:Enum.Tool) -> String:
 	match tool:
@@ -37,12 +39,7 @@ func _physics_process(_delta: float) -> void:
 		animate()
 	if direction:
 		last_direction = direction
-	var tool = get_tool_name(current_tool)
-	if tool == "":
-		$ToolTarget.visible = false;
-	else:
-		$ToolTarget.visible = true;
-		$ToolTarget.position = last_direction * TILE_SIZE + DEFAULT_TARGET_POSITION;
+	tool_target_emit()
 
 func get_basic_input():
 	if Input.is_action_just_pressed('tool_forward') or Input.is_action_just_pressed('tool_backward'):
@@ -63,6 +60,7 @@ func get_basic_input():
 func move():
 	direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * speed
+	
 	move_and_slide()
 
 func animate():
@@ -77,7 +75,8 @@ func animate():
 	else:
 		move_state_machine.travel('Idle')
 
-
+func tool_target_emit():
+	tool_target.emit(current_tool, position + last_direction * TILE_SIZE + DEFAULT_TARGET_POSITION)
 
 func tool_use_emit():
 	tool_use.emit(current_tool, position + last_direction * TILE_SIZE + DEFAULT_TARGET_POSITION)

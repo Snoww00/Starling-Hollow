@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dbmbhotl3mjb4" path="res://scenes/characters/player.gd" id="2_76oj4"]
 [ext_resource type="Texture2D" uid="uid://bp3sfnx2rutrs" path="res://graphics/characters/main/main_basic.png" id="3_6eyoc"]
-[ext_resource type="Texture2D" uid="uid://djnf3s4rpgxhp" path="res://graphics/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="3_76oj4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_atpat"]
 radius = 4.0
@@ -1553,10 +1552,6 @@ nodes/ToolOneShot/node = SubResource("AnimationNodeOneShot_yewv4")
 nodes/ToolOneShot/position = Vector2(-16, 16)
 node_connections = [&"output", 0, &"ToolOneShot", &"ToolOneShot", 0, &"MoveStateMachine", &"ToolOneShot", 1, &"ToolStateMachine"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mf747"]
-atlas = ExtResource("3_76oj4")
-region = Rect2(180, 148, 24, 25)
-
 [node name="Player" type="CharacterBody2D" unique_id=680609927 groups=["Player"]]
 collision_layer = 6
 collision_mask = 5
@@ -1566,6 +1561,7 @@ script = ExtResource("2_76oj4")
 texture = ExtResource("3_6eyoc")
 hframes = 33
 vframes = 4
+frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=91402497]
 shape = SubResource("CapsuleShape2D_atpat")
@@ -1595,12 +1591,6 @@ parameters/ToolOneShot/request = 0
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=442831773]
 zoom = Vector2(4, 4)
-
-[node name="ToolTarget" type="Node2D" parent="." unique_id=1449601738]
-
-[node name="TargetSprite" type="Sprite2D" parent="ToolTarget" unique_id=866768859]
-scale = Vector2(0.5, 0.5)
-texture = SubResource("AtlasTexture_mf747")
 
 [connection signal="animation_finished" from="Animation/AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="animation_started" from="Animation/AnimationTree" to="." method="_on_animation_tree_animation_started"]
