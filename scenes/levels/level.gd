@@ -18,7 +18,7 @@ func _on_player_tool_target(tool: Enum.Tool, pos: Vector2) -> void:
 		$Layers/FeedbackLayer.clear()
 	else:
 		$Layers/FeedbackLayer.clear()
-		$Layers/FeedbackLayer.set_cell(grid_coord, 8 ,Vector2i(4,4))
+		$Layers/FeedbackLayer.set_cell(grid_coord, 8 ,Vector2i(16,5))
 
 func _on_player_tool_use(tool: Enum.Tool, pos: Vector2) -> void:
 	var grid_coord: Vector2i = Vector2i(int(pos.x / Data.TILE_SIZE),int(pos.y / Data.TILE_SIZE))
