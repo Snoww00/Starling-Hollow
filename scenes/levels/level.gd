@@ -2,13 +2,20 @@ extends Node2D
 
 var plant_scene = preload('res://scenes/Objects/plant.tscn')
 var used_cells :Array[Vector2i]
+var raining : bool:
+	set(value):
+		raining= value
+		$"Layers/Rain Floor Particles".emitting = value
+		$"Overlay/Rain Drop Particles".emitting = value
 @onready var player = $Objects/Player
 @onready var day_transition_material = $"CanvasLayer/Day TransitionLayer".material
 @export var daytime_color : Gradient
+@export var rain_color : Color
 
-
-func _ready():
+func _ready() -> void:
+	Data.forecast_rain = [true,false].pick_random()
 	player.tool_target.connect(_on_player_tool_target)
+	
 	
 func _on_player_tool_target(tool: Enum.Tool, pos: Vector2) -> void:
 	var player_pos = player.position + player.last_direction * 16 + Vector2(0,4)
@@ -31,6 +38,9 @@ func _on_player_tool_use(tool: Enum.Tool, pos: Vector2) -> void:
 			var cell = $"Layers/Grass Layer".get_cell_tile_data(grid_coord) as TileData
 			if cell and cell.get_custom_data('farmable'):
 				$"Layers/Soil Layer".set_cells_terrain_connect([grid_coord], 0, 0)
+				if raining:
+					$"Layers/Soil Water Layer".set_cell(grid_coord, 0, Vector2(randi_range(0,2),0))
+					
 		Enum.Tool.WATER:
 			if has_soil:
 				$"Layers/Soil Water Layer".set_cell(grid_coord, 0, Vector2(randi_range(0,2),0))
@@ -58,10 +68,10 @@ func _on_player_tool_use(tool: Enum.Tool, pos: Vector2) -> void:
 							else:
 								child.queue_free()
 							break
-			
+
 func _process(_delta: float) -> void:
 	var daytime_point = 1 - ($Timers/DayTimer.time_left / $Timers/DayTimer.wait_time)
-	var color = daytime_color.sample(daytime_point)
+	var color = daytime_color.sample(daytime_point).lerp(rain_color, 0.5 if raining else 0.0)
 	$"Overlay/Daytime color".color = color
 	if Input.is_action_just_pressed("day_change"):
 		day_restart()
@@ -77,9 +87,16 @@ func level_reset():
 	
 	for plant in get_tree().get_nodes_in_group('Plants'):
 		plant.grow(plant.coord in $"Layers/Soil Water Layer".get_used_cells())
-	#$"Layers/Soil Water Layer".clear()
+	$"Layers/Soil Water Layer".clear()
 	
 	$Timers/DayTimer.start()
 	for object in get_tree().get_nodes_in_group('Objects'):
 		if 'reset' in object:
 			object.reset()
+		
+	raining = Data.forecast_rain
+	Data.forecast_rain = [true,false] .pick_random()
+	
+	if raining: 
+		for cell in $"Layers/Soil Layer".get_used_cells():
+			$"Layers/Soil Water Layer".set_cell(cell, 0, Vector2(randi_range(0,2),0))

@@ -6,9 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bhd33vu4qpbph" path="res://graphics/tilesets/water.png" id="1_xb4v1"]
 [ext_resource type="PackedScene" uid="uid://b0mnopqlx5dix" path="res://scenes/characters/player.tscn" id="2_b2cq8"]
 [ext_resource type="Texture2D" uid="uid://vrdy2gp08qay" path="res://graphics/tilesets/soil_water.png" id="5_d4w6o"]
+[ext_resource type="Texture2D" uid="uid://lgw5hjy4jrx0" path="res://graphics/weather/floor.png" id="7_qogh7"]
 [ext_resource type="PackedScene" uid="uid://b2lpebbx4vrgl" path="res://scenes/Objects/simple_object.tscn" id="7_rmjfq"]
 [ext_resource type="Texture2D" uid="uid://djnf3s4rpgxhp" path="res://graphics/Sprout Lands - UI Pack - Basic pack/Sprite sheets/Sprite sheet for Basic Pack.png" id="7_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://b2heydsd8i21a" path="res://scenes/Objects/Tree.tscn" id="8_icy5c"]
+[ext_resource type="Texture2D" uid="uid://da1u0rhfjt8a3" path="res://graphics/weather/drops.png" id="8_qogh7"]
 [ext_resource type="PackedScene" uid="uid://b0ug05qe8lus7" path="res://scenes/UI/tool_ui.tscn" id="9_icy5c"]
 [ext_resource type="Shader" uid="uid://cykq6yr0yah1p" path="res://shaders/circle_transition.gdshader" id="11_7pb6i"]
 
@@ -835,6 +837,40 @@ texture = ExtResource("7_xfk5q")
 [sub_resource type="TileSet" id="TileSet_ahhtf"]
 sources/8 = SubResource("TileSetAtlasSource_7pb6i")
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_eg0p3"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ogq8d"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1000, 650, 1)
+gravity = Vector3(0, 0, 0)
+anim_speed_min = 0.39999998
+anim_speed_max = 5.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_hyap7"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eg0p3"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(1000, 600, 1)
+angle_min = -4.9999895
+angle_max = -4.9999895
+direction = Vector3(-1, 1, 0)
+spread = 5.0
+initial_velocity_min = 70.0
+initial_velocity_max = 80.0
+gravity = Vector3(0, 0, 0)
+anim_speed_min = 0.39999998
+anim_speed_max = 2.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rmjfq"]
 shader = ExtResource("11_7pb6i")
 shader_parameter/progress = 0.0
@@ -842,6 +878,7 @@ shader_parameter/progress = 0.0
 [node name="Level" type="Node2D" unique_id=954509168]
 script = ExtResource("1_urvlt")
 daytime_color = SubResource("Gradient_7pb6i")
+rain_color = Color(0.6847315, 0.684732, 0.6847316, 1)
 
 [node name="Layers" type="Node2D" parent="." unique_id=1259154068]
 
@@ -868,6 +905,14 @@ tile_set = SubResource("TileSet_irt5y")
 [node name="FeedbackLayer" type="TileMapLayer" parent="Layers" unique_id=1879620856]
 z_index = -2
 tile_set = SubResource("TileSet_ahhtf")
+
+[node name="Rain Floor Particles" type="GPUParticles2D" parent="Layers" unique_id=449928060]
+material = SubResource("CanvasItemMaterial_eg0p3")
+position = Vector2(191, 365)
+emitting = false
+amount = 200
+texture = ExtResource("7_qogh7")
+process_material = SubResource("ParticleProcessMaterial_ogq8d")
 
 [node name="Objects" type="Node2D" parent="." unique_id=614547413]
 y_sort_enabled = true
@@ -1604,10 +1649,17 @@ position = Vector2(-118, 114)
 
 [node name="Daytime color" type="CanvasModulate" parent="Overlay" unique_id=1720747339]
 
+[node name="Rain Drop Particles" type="GPUParticles2D" parent="Overlay" unique_id=689202864]
+material = SubResource("CanvasItemMaterial_hyap7")
+position = Vector2(191, 365)
+emitting = false
+amount = 200
+texture = ExtResource("8_qogh7")
+process_material = SubResource("ParticleProcessMaterial_eg0p3")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=530729544]
 
 [node name="Day TransitionLayer" type="ColorRect" parent="CanvasLayer" unique_id=833006812]
-visible = false
 material = SubResource("ShaderMaterial_rmjfq")
 anchors_preset = 15
 anchor_right = 1.0
