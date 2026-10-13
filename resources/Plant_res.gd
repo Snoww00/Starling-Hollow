@@ -22,6 +22,7 @@ func setup(seed_enum = Enum.Seed):
 func decay(plant : StaticBody2D):
 	death_count += 1
 	if death_count >= death_max:
+		
 		plant.queue_free()
 		
 func get_complete():

@@ -7,11 +7,11 @@ func setup(grid_coord:Vector2i , parent: Node2D, new_res: PlantResource):
 	parent.add_child(self)
 	coord= grid_coord
 	res = new_res
-	$Sprite2D.texture = res.texture
+	$FlashSprite2D.texture = res.texture
 
 func grow(watered:bool):
 	if watered:
-		res.grow($Sprite2D)
+		res.grow($FlashSprite2D)
 	else:
 		res.decay(self)
 

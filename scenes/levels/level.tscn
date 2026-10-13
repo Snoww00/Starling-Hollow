@@ -874,43 +874,727 @@ y_sort_enabled = true
 
 [node name="SimpleObject" parent="Objects" unique_id=456384368 instance=ExtResource("7_rmjfq")]
 z_index = -1
-position = Vector2(97, 281)
+position = Vector2(-84, 138)
 collision_mask = 0
 random = false
 
 [node name="SimpleObject2" parent="Objects" unique_id=398614094 instance=ExtResource("7_rmjfq")]
-z_index = -1
-position = Vector2(171, 258)
+position = Vector2(16, 37)
 collision_mask = 0
 size = 2
-style = 1
 
 [node name="SimpleObject3" parent="Objects" unique_id=391399757 instance=ExtResource("7_rmjfq")]
-position = Vector2(108, 350)
+position = Vector2(-165, 204)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject6" parent="Objects" unique_id=861341343 instance=ExtResource("7_rmjfq")]
+position = Vector2(-202, 238)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject8" parent="Objects" unique_id=1841100046 instance=ExtResource("7_rmjfq")]
+position = Vector2(-95, 120)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject9" parent="Objects" unique_id=231905664 instance=ExtResource("7_rmjfq")]
+position = Vector2(-25, 126)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject10" parent="Objects" unique_id=1962964559 instance=ExtResource("7_rmjfq")]
+position = Vector2(-19, 75)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject11" parent="Objects" unique_id=240738135 instance=ExtResource("7_rmjfq")]
+position = Vector2(51, 70)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject12" parent="Objects" unique_id=1236730301 instance=ExtResource("7_rmjfq")]
+position = Vector2(36, 110)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject13" parent="Objects" unique_id=940482397 instance=ExtResource("7_rmjfq")]
+position = Vector2(148, -32)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject14" parent="Objects" unique_id=1183460014 instance=ExtResource("7_rmjfq")]
+position = Vector2(389, -135)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject15" parent="Objects" unique_id=184676559 instance=ExtResource("7_rmjfq")]
+position = Vector2(439, -141)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject16" parent="Objects" unique_id=1352723323 instance=ExtResource("7_rmjfq")]
+position = Vector2(513, -125)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject17" parent="Objects" unique_id=734096425 instance=ExtResource("7_rmjfq")]
+position = Vector2(479, -62)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject18" parent="Objects" unique_id=2127377768 instance=ExtResource("7_rmjfq")]
+position = Vector2(301, -34)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject20" parent="Objects" unique_id=24053923 instance=ExtResource("7_rmjfq")]
+position = Vector2(712, 17)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject21" parent="Objects" unique_id=1172726874 instance=ExtResource("7_rmjfq")]
+position = Vector2(849, 119)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject22" parent="Objects" unique_id=854329515 instance=ExtResource("7_rmjfq")]
+position = Vector2(831, 66)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject23" parent="Objects" unique_id=922853118 instance=ExtResource("7_rmjfq")]
+position = Vector2(639, 92)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject24" parent="Objects" unique_id=886901817 instance=ExtResource("7_rmjfq")]
+position = Vector2(598, 150)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject25" parent="Objects" unique_id=2110064751 instance=ExtResource("7_rmjfq")]
+position = Vector2(866, 193)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject26" parent="Objects" unique_id=1822764835 instance=ExtResource("7_rmjfq")]
+position = Vector2(751, 294)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject28" parent="Objects" unique_id=1834621337 instance=ExtResource("7_rmjfq")]
+position = Vector2(729, 728)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject29" parent="Objects" unique_id=1412150791 instance=ExtResource("7_rmjfq")]
+position = Vector2(595, 791)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject30" parent="Objects" unique_id=487149338 instance=ExtResource("7_rmjfq")]
+position = Vector2(453, 833)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject31" parent="Objects" unique_id=1954070234 instance=ExtResource("7_rmjfq")]
+position = Vector2(148, 785)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject32" parent="Objects" unique_id=795322692 instance=ExtResource("7_rmjfq")]
+position = Vector2(148, 785)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject33" parent="Objects" unique_id=1789489359 instance=ExtResource("7_rmjfq")]
+position = Vector2(134, 720)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject40" parent="Objects" unique_id=1195786570 instance=ExtResource("7_rmjfq")]
+position = Vector2(-38, 524)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject41" parent="Objects" unique_id=811452955 instance=ExtResource("7_rmjfq")]
+position = Vector2(-134, 460)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject42" parent="Objects" unique_id=1190352520 instance=ExtResource("7_rmjfq")]
+position = Vector2(-91, 495)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject34" parent="Objects" unique_id=1766384862 instance=ExtResource("7_rmjfq")]
+position = Vector2(-250, 643)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject35" parent="Objects" unique_id=1039345821 instance=ExtResource("7_rmjfq")]
+position = Vector2(-335, 831)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject36" parent="Objects" unique_id=990563987 instance=ExtResource("7_rmjfq")]
+position = Vector2(-460, 593)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject37" parent="Objects" unique_id=296769258 instance=ExtResource("7_rmjfq")]
+position = Vector2(-436, 550)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject38" parent="Objects" unique_id=1550716437 instance=ExtResource("7_rmjfq")]
+position = Vector2(-399, 492)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject39" parent="Objects" unique_id=1728020249 instance=ExtResource("7_rmjfq")]
+position = Vector2(-392, 544)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject27" parent="Objects" unique_id=301381297 instance=ExtResource("7_rmjfq")]
+position = Vector2(824, 176)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject19" parent="Objects" unique_id=1205478149 instance=ExtResource("7_rmjfq")]
+position = Vector2(276, -114)
+collision_mask = 0
+size = 2
+random = false
+
+[node name="SimpleObject7" parent="Objects" unique_id=1902560251 instance=ExtResource("7_rmjfq")]
+position = Vector2(-279, 283)
 collision_mask = 0
 size = 2
 random = false
 
 [node name="SimpleObject4" parent="Objects" unique_id=1309494899 instance=ExtResource("7_rmjfq")]
+position = Vector2(-32, 63)
+collision_mask = 0
+size = 2
+style = 1
+
+[node name="SimpleObject43" parent="Objects" unique_id=2021451768 instance=ExtResource("7_rmjfq")]
+position = Vector2(-24, 152)
+collision_mask = 0
+size = 3
+style = 1
+
+[node name="SimpleObject44" parent="Objects" unique_id=1767459798 instance=ExtResource("7_rmjfq")]
 z_index = -1
-position = Vector2(152, 299)
+position = Vector2(-137, 129)
 collision_mask = 0
 size = 1
 style = 1
 
-[node name="SimpleObject5" parent="Objects" unique_id=488933310 instance=ExtResource("7_rmjfq")]
-z_index = -1
-position = Vector2(213, 310)
+[node name="SimpleObject45" parent="Objects" unique_id=865204965 instance=ExtResource("7_rmjfq")]
+position = Vector2(-254, 253)
 collision_mask = 0
 size = 3
 style = 1
+
+[node name="SimpleObject86" parent="Objects" unique_id=1924956087 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(-98, 481)
+collision_mask = 0
 size = 1
+
+[node name="SimpleObject87" parent="Objects" unique_id=1673744955 instance=ExtResource("7_rmjfq")]
+position = Vector2(-339, 301)
+collision_mask = 0
+size = 2
+
+[node name="SimpleObject88" parent="Objects" unique_id=1582873382 instance=ExtResource("7_rmjfq")]
+position = Vector2(-96, 452)
+collision_mask = 0
+size = 3
+style = 1
+
+[node name="SimpleObject46" parent="Objects" unique_id=632622524 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(-316, 252)
+collision_mask = 0
+style = 1
+
+[node name="SimpleObject47" parent="Objects" unique_id=689705390 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(62, 29)
+collision_mask = 0
+style = 1
+
+[node name="SimpleObject48" parent="Objects" unique_id=1725693913 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(247, -98)
+collision_mask = 0
+size = 1
+style = 1
+
+[node name="SimpleObject49" parent="Objects" unique_id=166590585 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(252, -17)
+collision_mask = 0
+style = 1
+
+[node name="SimpleObject50" parent="Objects" unique_id=10597887 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(370, -17)
+collision_mask = 0
+
+[node name="SimpleObject51" parent="Objects" unique_id=1234902206 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(338, -138)
+collision_mask = 0
+size = 1
+style = 1
+
+[node name="SimpleObject56" parent="Objects" unique_id=562432048 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(527, -82)
+collision_mask = 0
+size = 1
+style = 1
+
+[node name="SimpleObject57" parent="Objects" unique_id=597184521 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(676, 40)
+collision_mask = 0
+size = 1
+style = 1
+
+[node name="SimpleObject58" parent="Objects" unique_id=2013165096 instance=ExtResource("7_rmjfq")]
+position = Vector2(835, 99)
+collision_mask = 0
+size = 2
+style = 1
+
+[node name="SimpleObject59" parent="Objects" unique_id=1907890748 instance=ExtResource("7_rmjfq")]
+position = Vector2(816, 36)
+collision_mask = 0
+size = 3
+
+[node name="SimpleObject60" parent="Objects" unique_id=872399744 instance=ExtResource("7_rmjfq")]
+position = Vector2(592, 116)
+collision_mask = 0
+size = 3
+style = 1
+
+[node name="SimpleObject61" parent="Objects" unique_id=95438119 instance=ExtResource("7_rmjfq")]
+position = Vector2(827, 159)
+collision_mask = 0
+size = 3
+style = 1
+
+[node name="SimpleObject62" parent="Objects" unique_id=1369979537 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(829, 223)
+collision_mask = 0
+size = 1
+
+[node name="SimpleObject63" parent="Objects" unique_id=2105976816 instance=ExtResource("7_rmjfq")]
+position = Vector2(711, 305)
+collision_mask = 0
+size = 3
+
+[node name="SimpleObject64" parent="Objects" unique_id=2014952623 instance=ExtResource("7_rmjfq")]
+position = Vector2(717, 287)
+collision_mask = 0
+size = 3
+
+[node name="SimpleObject65" parent="Objects" unique_id=2033480384 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(710, 294)
+collision_mask = 0
+
+[node name="SimpleObject66" parent="Objects" unique_id=2059954811 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(758, 306)
+collision_mask = 0
+size = 1
+
+[node name="SimpleObject67" parent="Objects" unique_id=972872059 instance=ExtResource("7_rmjfq")]
+position = Vector2(719, 709)
+collision_mask = 0
+size = 2
+style = 1
+
+[node name="SimpleObject68" parent="Objects" unique_id=180885052 instance=ExtResource("7_rmjfq")]
+position = Vector2(511, 751)
+collision_mask = 0
+size = 3
+
+[node name="SimpleObject69" parent="Objects" unique_id=2121101169 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(507, 770)
+collision_mask = 0
+size = 1
+style = 1
+
+[node name="SimpleObject70" parent="Objects" unique_id=791255604 instance=ExtResource("7_rmjfq")]
+position = Vector2(560, 816)
+collision_mask = 0
+size = 2
+
+[node name="SimpleObject71" parent="Objects" unique_id=1912413356 instance=ExtResource("7_rmjfq")]
+position = Vector2(561, 779)
+collision_mask = 0
+size = 3
+style = 1
+
+[node name="SimpleObject72" parent="Objects" unique_id=1903294840 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(463, 802)
+collision_mask = 0
+size = 1
+style = 1
+
+[node name="SimpleObject73" parent="Objects" unique_id=718183136 instance=ExtResource("7_rmjfq")]
+position = Vector2(144, 802)
+collision_mask = 0
+size = 2
+
+[node name="SimpleObject74" parent="Objects" unique_id=574076025 instance=ExtResource("7_rmjfq")]
+position = Vector2(127, 768)
+collision_mask = 0
+size = 2
+style = 1
+
+[node name="SimpleObject75" parent="Objects" unique_id=609445083 instance=ExtResource("7_rmjfq")]
+position = Vector2(118, 733)
+collision_mask = 0
+size = 3
+style = 1
+
+[node name="SimpleObject76" parent="Objects" unique_id=2067461086 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(-56, 667)
+collision_mask = 0
+size = 1
+
+[node name="SimpleObject78" parent="Objects" unique_id=649118905 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(-251, 685)
+collision_mask = 0
+size = 1
+
+[node name="SimpleObject85" parent="Objects" unique_id=1848616691 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(-396, 701)
+collision_mask = 0
+size = 1
+
+[node name="SimpleObject79" parent="Objects" unique_id=828499659 instance=ExtResource("7_rmjfq")]
+position = Vector2(-227, 814)
+collision_mask = 0
+size = 3
+
+[node name="SimpleObject80" parent="Objects" unique_id=169088269 instance=ExtResource("7_rmjfq")]
+position = Vector2(-415, 536)
+collision_mask = 0
+size = 3
+style = 1
+
+[node name="SimpleObject81" parent="Objects" unique_id=1689465803 instance=ExtResource("7_rmjfq")]
+position = Vector2(-390, 691)
+collision_mask = 0
+size = 3
+
+[node name="SimpleObject82" parent="Objects" unique_id=613429549 instance=ExtResource("7_rmjfq")]
+position = Vector2(-355, 787)
+collision_mask = 0
+size = 3
+style = 1
+
+[node name="SimpleObject83" parent="Objects" unique_id=1681860434 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(-274, 639)
+collision_mask = 0
+size = 1
+style = 1
+
+[node name="SimpleObject84" parent="Objects" unique_id=1119504001 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(-353, 836)
+collision_mask = 0
+style = 1
+
+[node name="SimpleObject77" parent="Objects" unique_id=121850317 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(2, 606)
+collision_mask = 0
+
+[node name="SimpleObject55" parent="Objects" unique_id=1632762650 instance=ExtResource("7_rmjfq")]
+position = Vector2(463, -165)
+collision_mask = 0
+size = 3
+
+[node name="SimpleObject52" parent="Objects" unique_id=602865193 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(452, -98)
+collision_mask = 0
+
+[node name="SimpleObject53" parent="Objects" unique_id=697115698 instance=ExtResource("7_rmjfq")]
+z_index = -1
+position = Vector2(358, -100)
+collision_mask = 0
+size = 1
+
+[node name="SimpleObject54" parent="Objects" unique_id=2023175226 instance=ExtResource("7_rmjfq")]
+position = Vector2(434, -32)
+collision_mask = 0
+size = 2
+
+[node name="SimpleObject5" parent="Objects" unique_id=488933310 instance=ExtResource("7_rmjfq")]
+position = Vector2(-152, 173)
+collision_mask = 0
+size = 3
+style = 1
 
 [node name="Player" parent="Objects" unique_id=2081127626 instance=ExtResource("2_b2cq8")]
 position = Vector2(183, 336)
 
 [node name="Tree" parent="Objects" unique_id=1858123554 instance=ExtResource("8_icy5c")]
-position = Vector2(68, 334)
+position = Vector2(16, 98)
+
+[node name="Tree40" parent="Objects" unique_id=209300939 instance=ExtResource("8_icy5c")]
+position = Vector2(60, 168)
+
+[node name="Tree41" parent="Objects" unique_id=999960824 instance=ExtResource("8_icy5c")]
+position = Vector2(-22, 218)
+
+[node name="Tree42" parent="Objects" unique_id=1611212559 instance=ExtResource("8_icy5c")]
+position = Vector2(-55, 161)
+
+[node name="Tree2" parent="Objects" unique_id=1062341149 instance=ExtResource("8_icy5c")]
+position = Vector2(13, 72)
+
+[node name="Tree3" parent="Objects" unique_id=2044262329 instance=ExtResource("8_icy5c")]
+position = Vector2(-313, 275)
+
+[node name="Tree4" parent="Objects" unique_id=1751311329 instance=ExtResource("8_icy5c")]
+position = Vector2(-116, 468)
+
+[node name="Tree5" parent="Objects" unique_id=976599285 instance=ExtResource("8_icy5c")]
+position = Vector2(-226, 263)
+
+[node name="Tree6" parent="Objects" unique_id=1268121900 instance=ExtResource("8_icy5c")]
+position = Vector2(-239, 192)
+
+[node name="Tree7" parent="Objects" unique_id=1620774710 instance=ExtResource("8_icy5c")]
+position = Vector2(681, 10)
+
+[node name="Tree50" parent="Objects" unique_id=951322885 instance=ExtResource("8_icy5c")]
+position = Vector2(695, 22)
+
+[node name="Tree51" parent="Objects" unique_id=1921747870 instance=ExtResource("8_icy5c")]
+position = Vector2(871, 77)
+
+[node name="Tree52" parent="Objects" unique_id=1178167001 instance=ExtResource("8_icy5c")]
+position = Vector2(864, 98)
+
+[node name="Tree53" parent="Objects" unique_id=2091599966 instance=ExtResource("8_icy5c")]
+position = Vector2(847, 77)
+
+[node name="Tree54" parent="Objects" unique_id=1447897601 instance=ExtResource("8_icy5c")]
+position = Vector2(846, 176)
+
+[node name="Tree55" parent="Objects" unique_id=1665610784 instance=ExtResource("8_icy5c")]
+position = Vector2(833, 196)
+
+[node name="Tree56" parent="Objects" unique_id=192140898 instance=ExtResource("8_icy5c")]
+position = Vector2(850, 216)
+
+[node name="Tree57" parent="Objects" unique_id=820795001 instance=ExtResource("8_icy5c")]
+position = Vector2(577, 156)
+
+[node name="Tree58" parent="Objects" unique_id=321393924 instance=ExtResource("8_icy5c")]
+position = Vector2(592, 126)
+
+[node name="Tree59" parent="Objects" unique_id=60202412 instance=ExtResource("8_icy5c")]
+position = Vector2(734, 289)
+
+[node name="Tree19" parent="Objects" unique_id=538670989 instance=ExtResource("8_icy5c")]
+position = Vector2(-11, 44)
+
+[node name="Tree20" parent="Objects" unique_id=653535099 instance=ExtResource("8_icy5c")]
+position = Vector2(54, 95)
+
+[node name="Tree21" parent="Objects" unique_id=1675226148 instance=ExtResource("8_icy5c")]
+position = Vector2(182, -14)
+
+[node name="Tree22" parent="Objects" unique_id=1874042349 instance=ExtResource("8_icy5c")]
+position = Vector2(389, -162)
+
+[node name="Tree23" parent="Objects" unique_id=1532855453 instance=ExtResource("8_icy5c")]
+position = Vector2(414, -143)
+
+[node name="Tree24" parent="Objects" unique_id=485040667 instance=ExtResource("8_icy5c")]
+position = Vector2(465, -148)
+
+[node name="Tree25" parent="Objects" unique_id=258918911 instance=ExtResource("8_icy5c")]
+position = Vector2(278, -138)
+
+[node name="Tree43" parent="Objects" unique_id=374650136 instance=ExtResource("8_icy5c")]
+position = Vector2(493, -139)
+
+[node name="Tree44" parent="Objects" unique_id=725743254 instance=ExtResource("8_icy5c")]
+position = Vector2(570, 793)
+
+[node name="Tree62" parent="Objects" unique_id=1503398946 instance=ExtResource("8_icy5c")]
+position = Vector2(474, 821)
+
+[node name="Tree63" parent="Objects" unique_id=176959678 instance=ExtResource("8_icy5c")]
+position = Vector2(493, 808)
+
+[node name="Tree64" parent="Objects" unique_id=528663676 instance=ExtResource("8_icy5c")]
+position = Vector2(152, 759)
+
+[node name="Tree67" parent="Objects" unique_id=1890309994 instance=ExtResource("8_icy5c")]
+position = Vector2(137, 746)
+
+[node name="Tree65" parent="Objects" unique_id=682314299 instance=ExtResource("8_icy5c")]
+position = Vector2(488, 786)
+
+[node name="Tree66" parent="Objects" unique_id=1044895646 instance=ExtResource("8_icy5c")]
+position = Vector2(488, 786)
+
+[node name="Tree60" parent="Objects" unique_id=36855369 instance=ExtResource("8_icy5c")]
+position = Vector2(589, 806)
+
+[node name="Tree61" parent="Objects" unique_id=624085650 instance=ExtResource("8_icy5c")]
+position = Vector2(746, 728)
+
+[node name="Tree45" parent="Objects" unique_id=871400568 instance=ExtResource("8_icy5c")]
+position = Vector2(447, -130)
+
+[node name="Tree46" parent="Objects" unique_id=777974126 instance=ExtResource("8_icy5c")]
+position = Vector2(492, -116)
+
+[node name="Tree47" parent="Objects" unique_id=1196613425 instance=ExtResource("8_icy5c")]
+position = Vector2(524, -108)
+
+[node name="Tree48" parent="Objects" unique_id=2113202975 instance=ExtResource("8_icy5c")]
+position = Vector2(454, -51)
+
+[node name="Tree49" parent="Objects" unique_id=1730652859 instance=ExtResource("8_icy5c")]
+position = Vector2(504, -75)
+
+[node name="Tree26" parent="Objects" unique_id=2113264622 instance=ExtResource("8_icy5c")]
+position = Vector2(340, -27)
+
+[node name="Tree27" parent="Objects" unique_id=22403633 instance=ExtResource("8_icy5c")]
+position = Vector2(299, -132)
+
+[node name="Tree28" parent="Objects" unique_id=1083256462 instance=ExtResource("8_icy5c")]
+position = Vector2(435, -166)
+
+[node name="Tree29" parent="Objects" unique_id=1789152390 instance=ExtResource("8_icy5c")]
+position = Vector2(363, -146)
+
+[node name="Tree8" parent="Objects" unique_id=1148757719 instance=ExtResource("8_icy5c")]
+position = Vector2(-282, 250)
+
+[node name="Tree9" parent="Objects" unique_id=812571781 instance=ExtResource("8_icy5c")]
+position = Vector2(-95, 89)
+
+[node name="Tree14" parent="Objects" unique_id=1002098430 instance=ExtResource("8_icy5c")]
+position = Vector2(-78, 474)
+
+[node name="Tree15" parent="Objects" unique_id=1518839140 instance=ExtResource("8_icy5c")]
+position = Vector2(-236, 224)
+
+[node name="Tree16" parent="Objects" unique_id=1134619389 instance=ExtResource("8_icy5c")]
+position = Vector2(-198, 196)
+
+[node name="Tree17" parent="Objects" unique_id=637402309 instance=ExtResource("8_icy5c")]
+position = Vector2(48, 43)
+
+[node name="Tree18" parent="Objects" unique_id=240771370 instance=ExtResource("8_icy5c")]
+position = Vector2(4, 131)
+
+[node name="Tree10" parent="Objects" unique_id=760431529 instance=ExtResource("8_icy5c")]
+position = Vector2(-38, 492)
+
+[node name="Tree30" parent="Objects" unique_id=299467677 instance=ExtResource("8_icy5c")]
+position = Vector2(-65, 499)
+
+[node name="Tree31" parent="Objects" unique_id=960576987 instance=ExtResource("8_icy5c")]
+position = Vector2(19, 594)
+
+[node name="Tree32" parent="Objects" unique_id=2105538933 instance=ExtResource("8_icy5c")]
+position = Vector2(-75, 664)
+
+[node name="Tree33" parent="Objects" unique_id=348320855 instance=ExtResource("8_icy5c")]
+position = Vector2(-228, 633)
+
+[node name="Tree34" parent="Objects" unique_id=79478476 instance=ExtResource("8_icy5c")]
+position = Vector2(-355, 807)
+
+[node name="Tree35" parent="Objects" unique_id=2041851234 instance=ExtResource("8_icy5c")]
+position = Vector2(-377, 789)
+
+[node name="Tree36" parent="Objects" unique_id=1652730750 instance=ExtResource("8_icy5c")]
+position = Vector2(-254, 618)
+
+[node name="Tree37" parent="Objects" unique_id=1306759286 instance=ExtResource("8_icy5c")]
+position = Vector2(-415, 505)
+
+[node name="Tree38" parent="Objects" unique_id=1815044659 instance=ExtResource("8_icy5c")]
+position = Vector2(-453, 562)
+
+[node name="Tree39" parent="Objects" unique_id=1750921345 instance=ExtResource("8_icy5c")]
+position = Vector2(-439, 526)
+
+[node name="Tree11" parent="Objects" unique_id=1273904939 instance=ExtResource("8_icy5c")]
+position = Vector2(-171, 232)
+
+[node name="Tree12" parent="Objects" unique_id=1458430113 instance=ExtResource("8_icy5c")]
+position = Vector2(-20, 93)
+
+[node name="Tree13" parent="Objects" unique_id=1803158183 instance=ExtResource("8_icy5c")]
+position = Vector2(-118, 114)
 
 [node name="User Interface" type="CanvasLayer" parent="." unique_id=1455069085]
 
@@ -923,6 +1607,7 @@ position = Vector2(68, 334)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=530729544]
 
 [node name="Day TransitionLayer" type="ColorRect" parent="CanvasLayer" unique_id=833006812]
+visible = false
 material = SubResource("ShaderMaterial_rmjfq")
 anchors_preset = 15
 anchor_right = 1.0

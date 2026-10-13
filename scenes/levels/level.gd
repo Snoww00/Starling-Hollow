@@ -53,7 +53,10 @@ func _on_player_tool_use(tool: Enum.Tool, pos: Vector2) -> void:
 					if "coord" in child and child.coord == grid_coord:
 						if child.is_ready_to_harvest():
 							used_cells.erase(grid_coord)
-							child.queue_free()
+							if child.has_node("FlashSprite2D"):
+								child.get_node("FlashSprite2D").flash(0.2, 0.4, child.queue_free)
+							else:
+								child.queue_free()
 							break
 			
 func _process(_delta: float) -> void:
